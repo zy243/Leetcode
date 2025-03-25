@@ -1,0 +1,32 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+ 
+        for (int i=0;i<nums.length-1;i++){
+            for(int j=i+1;j<nums.length;j++){
+          
+               if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+ 
+            }
+            
+        }
+        return new int[]{-1, -1}; // In case no solution is found (though problem states there is one)
+    }
+    public static void main(String []args){
+       Scanner sc=new Scanner(System.in);
+       System.out.println("nums = ");
+       String nums=sc.nextLine();
+       String[]num=nums.split(",");
+       int[]n=new int[num.length];
+       for (int i=0;i<n.length;i++){
+        n[i]=Integer.parseInt(num[i].trim());
+       }
+       System.out.print("nums="+Arrays.toString(n));
+       System.out.println("Target=");
+       int target=sc.nextInt();
+       Solution solution=new Solution();
+       int[]output=solution.twoSum(n,target);
+       System.out.print("Output="+Arrays.toString(output));
+    }
+}
