@@ -25,7 +25,7 @@ class Solution {
             carry=total/10;
             current.next = new ListNode(total % 10);
             current=current.next;
-            if (l1 != null) l1 = l1.next;
+            if (l1 != null) l1 = l1.next;//l1 move to l1.next
             if (l2 != null) l2 = l2.next;
         }
         return dummy.next;//first dummy=0
