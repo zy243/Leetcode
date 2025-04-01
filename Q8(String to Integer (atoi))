@@ -12,7 +12,9 @@ class Solution {
             sign = s.charAt(index) == '-' ? -1 : 1;
             index++;
         }
+        boolean digitFound = false; 
         while (index < n && Character.isDigit(s.charAt(index))) {
+            digitFound=true;
             int digit = s.charAt(index) - '0';
 
             // Check for overflow before updating result
@@ -24,6 +26,6 @@ class Solution {
             result = result * 10 + digit;
             index++;
         }
-        return result * sign;
-    }
-}
+         if (!digitFound) {
+            return 0;
+        }
