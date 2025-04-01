@@ -5,13 +5,13 @@ class Solution {
         }
 
         int reversed=0;
-        while(x!=0){
+        while(x > reversed){
             int digit=x%10;
-            reversed=digit*10+reversed;
+            reversed=reversed*10+digit;
             x/=10;
             
         }
-        return x==reversed||x==reversed%10;//reversed half 
+        return x==reversed||x==reversed/10;//reversed half 
 //Example for x = 12321:
 
 After reversing half, we get reversed = 123 and x = 12.
