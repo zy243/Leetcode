@@ -11,6 +11,11 @@ class Solution {
             x/=10;
             
         }
-        return x==reversed||x==reversed%10;
+        return x==reversed||x==reversed%10;//reversed half 
+//Example for x = 12321:
+
+After reversing half, we get reversed = 123 and x = 12.
+
+Since x == reversed / 10 (12 == 123 / 10), return true.
     }
 }
